@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="GameHub - lightweight free browser games.">
+  <title>GameHub — Free Browser Games</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="GameHub home"><span class="brand-mark">G</span><b>GAMEHUB</b></a>
+    <nav class="nav">
+      <a class="nav-link active" href="#home">Home</a>
+      <a class="nav-link" href="#games">Games</a>
+      <a class="nav-link" href="#categories">Categories</a>
+    </nav>
+    <button class="icon-btn" id="themeBtn" aria-label="Toggle theme">☼</button>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-copy">
+        <span class="eyebrow">LIGHTWEIGHT • FREE • INSTANT</span>
+        <h1>Play something<br><span>great.</span></h1>
+        <p>Small browser games that load fast and play instantly. No downloads and no giant game files.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#games">Browse Games</a>
+          <button class="btn ghost" id="randomBtn">Random Game</button>
+        </div>
+        <div class="hero-stats">
+          <div><strong id="gameCount">0</strong><span>Games</span></div>
+          <div><strong>0 MB</strong><span>Downloads</span></div>
+          <div><strong>100%</strong><span>Browser</span></div>
+        </div>
+      </div>
+
+      <button class="hero-card" id="featuredCard">
+        <div class="featured-art"><span>⚡</span></div>
+        <div class="featured-info">
+          <span class="badge">FEATURED</span>
+          <h2>Neon Runner</h2>
+          <p>Dodge the blocks and survive as long as possible.</p>
+          <strong>Play now →</strong>
+        </div>
+      </button>
+    </section>
+
+    <section class="section" id="games">
+      <div class="section-heading">
+        <div><span class="eyebrow">LIBRARY</span><h2>Games</h2></div>
+        <label class="search"><span>⌕</span><input id="searchInput" type="search" placeholder="Search games..." autocomplete="off"></label>
+      </div>
+      <div class="chips" id="categoryChips"></div>
+      <div class="game-grid" id="gameGrid"></div>
+      <p class="empty hidden" id="emptyState">No games matched your search.</p>
+    </section>
+
+    <section class="section" id="categories">
+      <div class="section-heading"><div><span class="eyebrow">EXPLORE</span><h2>Categories</h2></div></div>
+      <div class="category-grid">
+        <button class="category-card" data-category="Arcade"><span>🕹</span><b>Arcade</b><small>Quick pick-up-and-play</small></button>
+        <button class="category-card" data-category="Action"><span>⚔</span><b>Action</b><small>Fast-paced challenges</small></button>
+        <button class="category-card" data-category="Puzzle"><span>🧩</span><b>Puzzle</b><small>Think your way through</small></button>
+        <button class="category-card" data-category="Classic"><span>🏆</span><b>Classic</b><small>Old-school favorites</small></button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div><b>GAMEHUB</b><p>Fast games. Simple site.</p></div>
+    <div class="footer-links"><a href="#home">Home</a><a href="#games">Games</a><a href="#categories">Categories</a></div>
+  </footer>
+
+  <div class="modal hidden" id="gameModal">
+    <div class="modal-panel">
+      <button class="close-btn" id="closeModal" aria-label="Close">×</button>
+      <div class="game-header"><div><span class="badge" id="modalCategory">GAME</span><h2 id="modalTitle">Game</h2><p id="modalDescription"></p></div></div>
+      <div class="game-area" id="gameArea"></div>
+      <div class="game-controls" id="gameControls"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
